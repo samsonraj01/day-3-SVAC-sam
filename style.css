@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url('assets/bg.jpg') no-repeat center center/cover;
+    background: url('bg.jpg') no-repeat center center/cover;
     color: var(--text);
     min-height: 100vh;
 
