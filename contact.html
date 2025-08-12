@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MySite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    if (link.hostname === window.location.hostname && !link.href.includes('#')) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.href;
+            document.body.style.animation = 'fadeOutPage 0.5s ease-in';
+            setTimeout(() => window.location.href = target, 500);
+        });
+    }
+});
+</script>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Site Logo">
+            MySite
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="glow-btn">Send</button>
+    </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

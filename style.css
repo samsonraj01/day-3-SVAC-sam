@@ -1,0 +1,172 @@
+:root {
+    --primary: #4e54c8;
+    --secondary: #8f94fb;
+    --text: #fff;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('assets/bg.jpg') no-repeat center center/cover;
+    color: var(--text);
+    min-height: 100vh;
+
+    /* Overlay for readability */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+
+    /* Fade in animation */
+    animation: fadeInPage 0.6s ease-in;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutPage {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 8px 14px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: yellow;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.glow-btn {
+    background: yellow;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.glow-btn:hover {
+    background: orange;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px orange;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 250px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
